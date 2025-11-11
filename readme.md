@@ -1,66 +1,42 @@
-# 🕵️ Motion Detection System
+1. openpose.py
 
-A **real-time motion detection system** that integrates **OpenPose** and **MoveNet** for advanced human pose estimation and action recognition.  
-Developed as part of **CS5330 – Pattern Recognition and Computer Vision** at **Northeastern University**.
+Key Functionalities:
+Pose Detection: This script uses the OpenPose library to detect human poses. It is set up to identify various body parts (e.g., nose, neck, shoulders) and connects these parts using predefined pose pairs to form a human skeleton on the images or video frames processed.
 
----
-
-## 📘 Overview
-
-This project combines the strengths of **OpenPose** and **MoveNet** to detect, track, and analyze human motion.  
-- **OpenPose** provides detailed, multi-person keypoint detection (body, face, hands, feet).  
-- **MoveNet** offers fast, lightweight real-time inference suitable for mobile and embedded systems.  
-- An **LSTM model** is used to classify human actions based on temporal sequences of pose keypoints.
-
----
-
-## ⚙️ Methodology
-
-### 1. Input
-- Input: pre-recorded test video.  
-- Each frame is extracted and preprocessed for pose estimation.
-
-### 2. Pose Estimation Models
-**OpenPose**
-- Detects body, face, hands, and feet keypoints.  
-- Draws skeletal lines for visualization.  
-- Average confidence score: **0.42**
-
-**MoveNet (Lightning / Thunder)**
-- Single-pose and multi-pose modes.  
-- Optimized for real-time performance.  
-- Average confidence score: **0.25**
-
-### 3. Tracking & Visualization
-- Detected keypoints are connected to form human skeletons.  
-- Frame-by-frame confidence plots visualize detection stability.  
-
-### 4. Action Classification (LSTM)
-- Sequences of pose keypoints are passed to an LSTM network.  
-- LSTM captures temporal motion dynamics for **action recognition**.
-
----
-
-## 🧩 Extensions
-- Combine multiple models for ensemble predictions.  
-- Extend to **multi-person action classification**.  
-- Optimize for edge and mobile devices.  
-- Integrate **MediaPipe** for preprocessing and pose refinement.  
+Visualization: The script includes functionality to draw the detected keypoints and skeletons directly on the images or video frames, providing visual feedback of the pose estimation.
 
 
+2. openpose_database.py
 
-## 🧰 Technologies Used
-- Python  
-- OpenCV  
-- TensorFlow / PyTorch  
-- OpenPose  
-- MoveNet  
-- LSTM Networks  
+Key Functionalities:
+Database Interaction: This script handles operations related to storing and retrieving pose data, potentially interfacing with a database system. It might store keypoints, skeletal data, and possibly annotations if it interacts with datasets like COCO.
 
----
+Data Handling: It involves downloading, extracting, and processing COCO annotations or other related datasets.
 
-## 🚀 Getting Started
+3. run_movenet.py
 
-### Prerequisites
-```bash
-pip install opencv-python tensorflow numpy matplotlib
+Key Functionalities:
+Model Execution: Loads a MoveNet model (likely from TensorFlow Hub) and runs this model to perform pose estimation on provided images or video streams.
+
+Real-time Pose Estimation: Processes video or image data in real-time (or from files) to detect human poses, utilizing the lightweight or efficient architecture of MoveNet for quick processing.
+
+4. run_movenet_thunder.py
+
+Key Functionalities:
+Model Execution Using Thunder Model: Similar to run_movenet.py, but specifically utilizing the Thunder variant of MoveNet, which is optimized for a balance between speed and accuracy, favoring accuracy.
+
+Pose Estimation: Provides pose estimation functionalities with enhanced accuracy, suitable for applications where higher precision in pose detection is required.
+
+5. movenet_lightning_coco.py
+
+Key Functionalities:
+Fast Pose Estimation: Uses the Lightning version of MoveNet, which is optimized for speed, to perform fast pose estimation, particularly formatted for and tested against the COCO dataset.
+
+Dataset-Specific Processing: This script includes special handling or preprocessing steps tailored to the structure and requirements of the COCO dataset, optimizing the performance of pose detection tasks.
+
+6. movenet_multipose_lighting.py
+
+Key Functionalities:
+Multipose Detection: Designed to handle scenarios with multiple people, detecting poses for several individuals within the same frame.
+
+Lighting Adjustment: It includes functionalities that adjust detection parameters or utilize specific model settings that enhance performance under various lighting conditions, ensuring robust pose detection across different environments.
