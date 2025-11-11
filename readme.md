@@ -47,32 +47,7 @@ This project combines the strengths of **OpenPose** and **MoveNet** to detect, t
 - Optimize for edge and mobile devices.  
 - Integrate **MediaPipe** for preprocessing and pose refinement.  
 
----
 
-## 👥 Team
-
-| Name | Role |
-|------|------|
-| **Aswin Chander Aravind Kumar** | Pose Estimation & Camera Calibration |
-| **Shruti Pasumarti** | 3D Overlay & AR Integration |
-
----
-
-## 💭 Reflections
-
-**Aswin Chander Aravind Kumar**  
-> “This project deepened my understanding of computer vision, OpenCV, and camera calibration. It showed me the importance of careful parameter tuning for accurate detection.”
-
-**Shruti Pasumarti**  
-> “Depth perception and AR overlay alignment were challenging but rewarding. Debugging 3D overlays improved my understanding of integrating virtual and real-world coordinates.”
-
----
-
-## 📚 Resources
-- Professor’s Notes  
-- Reference Codes  
-
----
 
 ## 🧰 Technologies Used
 - Python  
